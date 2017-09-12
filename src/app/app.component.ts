@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  firstName: string = 'Test';
+  isHidden: boolean = true;
+
+  divToggle() {
+    this.isHidden = !this.isHidden;
+  }
 }
