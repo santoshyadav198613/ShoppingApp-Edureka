@@ -1,0 +1,52 @@
+<h1>Order Form</h1>
+{{orderForm.value| json}}
+<form [formGroup]="orderForm">
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="userName" name="username">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="userId" name="userid">
+  </div>
+  <div formGroupName="address">
+    <div>
+      <input class="form-control" type="text" formControlName="addressLine1" name="Address1">
+    </div>
+    <div>
+      <input class="form-control" type="text" formControlName="addressLine2" name="Address2">
+    </div>
+    <div>
+      <input class="form-control" type="text" formControlName="city" name="city">
+    </div>
+    <div>
+      <input class="form-control" type="text" formControlName="pin" name="pin">
+    </div>
+  </div>
+  <div>
+    <div>
+      <button class="btn btn-primary" (click)="addcards()">Add Card</button>
+    </div>
+    <div formArrayName="cards">
+      <div *ngFor="let card of orderForm.controls.cards.controls;let i=index">
+        <div [formGroupName]="i">
+          Card{{i+1}}
+          <div *ngIf="i>0">
+            <button class="btn btn-primary" (click)="removeCard(i)">Remove</button>
+          </div>
+          <div>
+            <input class="form-control" type="number" formControlName="cardNumber" name="cardNumber">
+          </div>
+          <div>
+            <input class="form-control" type="number" formControlName="cvv" name="cvv">
+          </div>
+          <div>
+            <input class="form-control" type="number" formControlName="month" name="month">
+          </div>
+          <div>
+            <input class="form-control" type="number" formControlName="year" name="year">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button [disabled]="orderForm.invalid" class="btn btn-primary">Save</button>
+  </div>
+</form>
