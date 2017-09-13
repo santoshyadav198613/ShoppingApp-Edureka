@@ -6,7 +6,11 @@
 {{product| json}}
 <form #productForm="ngForm" (submit)="submit()" novalidate>
   <div class="form-group">
-    <input class="form-control" required type="number" [(ngModel)]="product.id" name="id" placeholder="Id">
+    <input class="form-control" required type="number" [(ngModel)]="product.id" name="id" placeholder="Id" #productId="ngModel">
+    <!-- {{productId.invalid| json}} -->
+    <div class="alert alert-danger" [hidden]="productId.valid">
+      Please provide product id.
+    </div>
   </div>
   <div class="form-group">
     <input class="form-control" required type="text" [(ngModel)]="product.name" name="name" placeholder="Product Name">
