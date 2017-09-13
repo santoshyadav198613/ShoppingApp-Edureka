@@ -15,4 +15,9 @@ export class ProductService {
     return this.productList;
   }
 
+  addProduct(product: Product) {
+    this.productList.push(product);
+    return this.productList;
+  }
+
 }

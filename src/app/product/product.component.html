@@ -1,4 +1,25 @@
 <p>
   product works! {{appName}}
 </p>
+
+
+{{product| json}}
+<form #productForm="ngForm" (submit)="submit()" novalidate>
+  <div class="form-group">
+    <input class="form-control" required type="number" [(ngModel)]="product.id" name="id" placeholder="Id">
+  </div>
+  <div class="form-group">
+    <input class="form-control" required type="text" [(ngModel)]="product.name" name="name" placeholder="Product Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" required type="number" [(ngModel)]="product.price" name="price" placeholder="Product Price">
+  </div>
+  <div class="form-group">
+    <input class="form-control" required type="date" [(ngModel)]="product.craetedDate" name="createDate" placeholder="Created Date">
+  </div>
+  <div>
+    <button [disabled]="productForm.invalid" class="btn btn-primary">Save</button>
+  </div>
+</form>
+
 {{products| json}}
