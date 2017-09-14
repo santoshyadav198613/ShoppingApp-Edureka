@@ -1,0 +1,33 @@
+<p>
+  employee-list works!
+</p>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Id
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Age
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of prodList">
+      <td>
+        {{product.id}}
+      </td>
+      <td>
+          {{product.name}}
+      </td>
+      <td>
+          {{product.age}}
+      </td>
+    </tr>
+  </tbody>
+</table>
