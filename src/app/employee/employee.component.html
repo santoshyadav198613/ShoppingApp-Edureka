@@ -1,4 +1,8 @@
 <h1>
   Employee List
 </h1>
-<app-employee-list [prodList]="employeeList"></app-employee-list>
+<app-employee-list (message)="receiveFromChild($event)"></app-employee-list>
+<app-employee-list (message)="receiveFromChild($event)"></app-employee-list>
+
+
+{{messageFromChild}}

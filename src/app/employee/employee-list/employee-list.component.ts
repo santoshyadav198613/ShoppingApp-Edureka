@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Employee } from '../employee';
 
 @Component({
@@ -8,9 +8,15 @@ import { Employee } from '../employee';
 })
 export class EmployeeListComponent implements OnInit {
   @Input() prodList: Employee[];
+  @Output() message = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
+
+  sendMessageToParent() {
+      this.message.emit('Hello this is your child');
+  }
+
 
 }
