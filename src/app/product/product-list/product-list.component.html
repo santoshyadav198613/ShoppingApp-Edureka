@@ -1,0 +1,44 @@
+<h1>
+  Product List
+</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        ID
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Created Date
+      </th>
+      <th>
+        Details
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <td>
+        {{product.id}}
+      </td>
+      <td>
+        {{product.name}}
+      </td>
+      <td>
+        {{product.price}}
+      </td>
+      <td>
+        {{product.craetedDate}}
+      </td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="[product.id]">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

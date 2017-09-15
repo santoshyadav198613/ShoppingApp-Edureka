@@ -1,9 +1,7 @@
-<p>
-  product works! {{appName}}
-</p>
+<h1>
+  Add Product Form
+</h1>
 
-
-{{product| json}}
 <form #productForm="ngForm" (submit)="submit()" novalidate>
   <div class="form-group">
     <input class="form-control" required type="number" [(ngModel)]="product.id" name="id" placeholder="Id" #productId="ngModel">
@@ -26,4 +24,6 @@
   </div>
 </form>
 
-{{products| json}}
+<hr>
+
+<app-product-list></app-product-list>

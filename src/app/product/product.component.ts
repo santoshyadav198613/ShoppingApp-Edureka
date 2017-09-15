@@ -17,17 +17,13 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.appName = 'Test App';
     this.product = { id: 0, name: 'Test Product', price: 100, craetedDate: new Date('10-10-2017') };
-    this.loadProductData();
+
   }
 
   submit() {
     this.productService.addProduct(this.product);
-    this.loadProductData();
     this.product = new Product();
   }
 
-  loadProductData() {
-    this.products = this.productService.getProducts();
-  }
 
 }
