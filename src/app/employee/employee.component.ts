@@ -21,15 +21,11 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit() {
-    //this.empComponent.prodList = this.employeeList;
-    //  this.empListComponent.forEach((data) => data.prodList = this.employeeList);
-    // this.empListComponent.forEach(function (data) {
-    //   this.prodList = data;
-    // });
+
   }
 
   ngAfterViewInit() {
-    this.empListComponent.forEach((data) => data.prodList = this.employeeList);
+
   }
 
   receiveFromChild(message: string) {
