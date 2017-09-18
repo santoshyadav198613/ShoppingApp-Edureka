@@ -9,10 +9,14 @@ export class ApiInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('This is intercepted call');
         console.log(req);
-        let request = req.clone({ headers: req.headers.set('token', 'thisisnewtoken') });
-        console.log('This is modified call');
-        console.log(request);
-        return next.handle(request);
+        if (req.method === 'POST') {
+            let request = req.clone({ headers: req.headers.set('token', 'thisisnewtoken') });
+            console.log('This is modified call');
+            console.log(request);
+            return next.handle(request);
+        }
+
+        return next.handle(req);
     }
 
 }
