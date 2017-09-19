@@ -11,6 +11,7 @@ import { AuthGuard } from '../service/guard/auth.guard';
 import { ProductResolveGuard } from '../service/product/product-resolve.guard';
 import { InrPipe } from '../common/inr.pipe';
 import { PricePipe } from '../common/price.pipe';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { PricePipe } from '../common/price.pipe';
     ])
   ],
   declarations: [ProductComponent, ProductListComponent,
-    ProductDetailsComponent, InrPipe, PricePipe],
-  providers: [ProductService, ProductResolveGuard]
+    ProductDetailsComponent, InrPipe, PricePipe, ProductEditComponent],
+  providers: [ProductService, ProductResolveGuard],
+  entryComponents: [ProductEditComponent]
 })
 export class ProductModule { }

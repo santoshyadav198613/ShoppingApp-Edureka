@@ -1,0 +1,17 @@
+<h2 md-dialog-title>Edit Product</h2>
+<md-dialog-content>
+  {{product|json}}
+  <form class="col-md-6" #editForm="ngForm" novalidate>
+    <div class="form-group">
+      <input class="form-control" type="text" name="name" required [(ngModel)]="product.name" placeholder="Product Name">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="number" name="price" required [(ngModel)]="product.price" placeholder="Price">
+    </div>
+  </form>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button md-dialog-close>No</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button md-button (click)="save()">Save</button>
+</md-dialog-actions>
