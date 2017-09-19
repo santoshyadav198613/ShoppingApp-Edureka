@@ -9,6 +9,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductService } from '../service/product/product.service';
 import { AuthGuard } from '../service/guard/auth.guard';
 import { ProductResolveGuard } from '../service/product/product-resolve.guard';
+import { InrPipe } from '../common/inr.pipe';
+import { PricePipe } from '../common/price.pipe';
 
 @NgModule({
   imports: [
@@ -26,7 +28,8 @@ import { ProductResolveGuard } from '../service/product/product-resolve.guard';
       }
     ])
   ],
-  declarations: [ProductComponent, ProductListComponent, ProductDetailsComponent],
+  declarations: [ProductComponent, ProductListComponent,
+    ProductDetailsComponent, InrPipe, PricePipe],
   providers: [ProductService, ProductResolveGuard]
 })
 export class ProductModule { }

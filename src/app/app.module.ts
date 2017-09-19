@@ -21,6 +21,9 @@ import { LoginService } from './service/service/login.service';
 import { PostComponent } from './post/post.component';
 import { PostService } from './service/post/post.service';
 import { ApiInterceptor } from './interceptor/http-interceptor.service';
+import { HoverDirective } from './directive/hover.directive';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import { ApiInterceptor } from './interceptor/http-interceptor.service';
     EmployeeListComponent,
     PagenotfoundComponent,
     LoginComponent,
-    PostComponent
+    PostComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,

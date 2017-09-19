@@ -23,18 +23,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productList">
+    <tr *ngFor="let product of productList | price : 1000">
       <td>
         {{product.id}}
       </td>
       <td>
-        {{product.name}}
+        {{product.name | lowercase}}
       </td>
       <td>
-        {{product.price}}
+        {{product.price | inr:'Rs.' }}
       </td>
       <td>
-        {{product.craetedDate}}
+        {{product.craetedDate | date:'MM/dd/yyyy'}}
       </td>
       <td>
         <button class="btn btn-primary" [routerLink]="[product.id]">Details</button>
