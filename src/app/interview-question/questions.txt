@@ -11,3 +11,5 @@
 11. How to use http interceptor
 12. What is Observables 
 13. How to configure singleton service
+14. How to disable change detection
+15. Lifecyscle hooks
