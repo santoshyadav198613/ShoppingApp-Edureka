@@ -1,0 +1,13 @@
+1. What  is component
+2. What is PIPE
+3. What is differenve between component and directive
+4. How to implement a custom pipe and directive
+5. What is guard and how to implement
+6. Lazy loading
+7. What is feature and shared module
+8. how to configure routing
+9.  Dependency Injection
+10. How to interact with API
+11. How to use http interceptor
+12. What is Observables 
+13. How to configure singleton service
